@@ -1,4 +1,10 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { 
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  Link
+} from 'react-router-dom';
 
 // pages
 import Home from "./pages/Home"
@@ -15,9 +21,10 @@ function App() {
         <Link to="/create">Create New Smoothie</Link>
       </nav>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/create" element={<Create />} />
-        <Route path="/:id" element={<Update />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/create" element={<Create />} />
+        <Route exact path="/:id" element={<Update />} />
+
       </Routes>
     </BrowserRouter>
   );
